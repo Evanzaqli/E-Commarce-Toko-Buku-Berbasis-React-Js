@@ -3,7 +3,7 @@ import './App.css';
 import { BrowserRouter as Router,  Route,Routes } from 'react-router-dom';
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
-import {Shop,About,Home,Contact,Cart,Detail} from './pages';
+import {Shop,About,Home,Contact,Cart,ProductDetail} from './pages';
 
 
 
@@ -19,7 +19,7 @@ function App() {
           <Route path='/About' element={<About />} />
           <Route path='/Contact' element={<Contact />} />
           <Route path='/Cart' element={<Cart />} />
-          <Route path='/Detail' element={<Detail />} />
+          <Route path='/ProductDetail/:id' element={<ProductDetail />} />
 
           </Routes>
       </div>

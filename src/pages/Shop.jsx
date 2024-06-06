@@ -4,7 +4,6 @@ import "../components/css/Shop.css";
 import { Button, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-
 function Shop() {
   const url = "http://localhost:3500/products";
   const [products, setProducts] = useState([]);
@@ -12,7 +11,6 @@ function Shop() {
   const [selectedCategory, setSelectedCategory] = useState("All Books");
   const [searchTerm, setSearchTerm] = useState("");
 
-  // State Paginasi
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 8;
 
@@ -34,7 +32,7 @@ function Shop() {
 
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
-    setCurrentPage(1); // Reset ke halaman pertama saat kategori berubah
+    setCurrentPage(1);
   };
 
   const filteredProducts = products.filter((product) => {
@@ -46,7 +44,6 @@ function Shop() {
     return matchesCategory && matchesSearch;
   });
 
-  // Logika Paginasi
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentProducts = filteredProducts.slice(
@@ -86,6 +83,7 @@ function Shop() {
             {currentProducts.map((product) => (
               <div className="col-lg-3" key={product.id}>
                 <CardProduct
+                  id={product.id}
                   title={product.title}
                   price={product.price}
                   description={product.description}
@@ -104,7 +102,6 @@ function Shop() {
                 <Link
                   className="page-link"
                   onClick={() => setCurrentPage(currentPage - 1)}
-                  disabled={currentPage === 1}
                 >
                   Previous
                 </Link>
@@ -115,7 +112,7 @@ function Shop() {
                   className={`page-item ${
                     currentPage === index + 1 ? "active" : ""
                   }`}
-                  >
+                >
                   <Link
                     className="page-link"
                     onClick={() => setCurrentPage(index + 1)}
@@ -132,7 +129,6 @@ function Shop() {
                 <Link
                   className="page-link"
                   onClick={() => setCurrentPage(currentPage + 1)}
-                  disabled={currentPage === totalPages}
                 >
                   Next
                 </Link>
@@ -155,7 +151,7 @@ function CardProduct(props) {
   return (
     <Card style={{ width: "190px" }}>
       <Container>
-        <Link to="/Detail">
+        <Link to={`/detail/${props.id}`}>
           <Card.Img variant="top" src={props.image} />
         </Link>
         <Card.Body>

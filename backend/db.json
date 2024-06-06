@@ -6,7 +6,8 @@
         "price": 100.000,
         "description": "Yuval Noah Harari",
         "image": "/image/buku 2.svg",
-        "category": "Novel"
+        "category": "Novel",
+        "detail" :"SKU: GRM-2284 ISBN: 9786024552848 Weight: 480 grams Dimensions (W/H/L): 20 cm / 14 cm / 0 cm Pages: 588 over Type: Soft Cover"
       },
       {
         "id": 2,
