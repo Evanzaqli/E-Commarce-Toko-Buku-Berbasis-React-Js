@@ -1,0 +1,102 @@
+{
+    "products": [
+      {
+        "id": 1,
+        "title": "The Both Die At The End",
+        "price": 100.000,
+        "description": "Yuval Noah Harari",
+        "image": "/image/buku 2.svg",
+        "category": "Novel"
+      },
+      {
+        "id": 2,
+        "title": "The Art Of War",
+        "price": 80.999,
+        "description": "Adam Silvera",
+        "image": "/image/buku3.svg",
+        "category": "Komik"
+      },
+      {
+        "id": 3,
+        "title": "Product 3",
+        "price": 19.99,
+        "description": "Description of Product 3",
+        "image": "/image/sapiens.svg",
+        "category": "Drama"
+      },
+      {
+        "id": 4,
+        "title": "Product 4",
+        "price": 49.99,
+        "description": "Description of Product 4",
+        "image": "/image/buku4.svg",
+        "category": "Action"
+      },
+      {
+        "id": 5,
+        "title": "Product 5",
+        "price": 19.99,
+        "description": "Description of Product 3",
+        "image": "https://via.placeholder.com/150",
+        "category": "Drama"
+      },
+      {
+        "id": 6,
+        "title": "Product 3",
+        "price": 19.99,
+        "description": "Description of Product 3",
+        "image": "https://via.placeholder.com/150",
+        "category": "Novel"
+      },
+      {
+        "id": 7,
+        "title": "Product 3",
+        "price": 19.99,
+        "description": "Description of Product 3",
+        "image": "https://via.placeholder.com/150",
+        "category": "Action"
+      },
+      {
+        "id": 8,
+        "title": "Product 3",
+        "price": 19.99,
+        "description": "Description of Product 3",
+        "image": "https://via.placeholder.com/150",
+        "category": "Drama"
+      },
+      {
+        "id": 9,
+        "title": "Product 3",
+        "price": 19.99,
+        "description": "Description of Product 3",
+        "image": "/image/sapiens.svg",
+        "category": "Drama"
+      },
+      {
+        "id": 10,
+        "title": "Product 3",
+        "price": 19.99,
+        "description": "Description of Product 3",
+        "image": "/image/sapiens.svg",
+        "category": "Drama"
+      },
+      {
+        "id": 11,
+        "title": "Product 3",
+        "price": 71.000,
+        "description": "Description of Product 3",
+        "image": "/image/sapiens.svg",
+        "category": "Drama"
+      },
+      {
+        "id": 12,
+        "title": "Product 3",
+        "price": 19.99,
+        "description": "Description of Product 3",
+        "image": "/image/sapiens.svg",
+        "category": "Drama"
+      }
+      
+    ]
+  }
+  
