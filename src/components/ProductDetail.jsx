@@ -5,28 +5,45 @@ import axios from "axios";
 const ProductDetail = () => {
   const { id } = useParams();
   const [bookData, setBookData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchBookData = async () => {
       try {
-        const response = await axios.get(`http://localhost:3500/products`);
+        console.log('Mengambil data untuk ID produk: ${id}');
+        const response = await axios.get('http://localhost:3500/products');
+        console.log('Respon API:', response);
         const books = response.data.products;
-        const book = books.find(book => book.id === parseInt(id));
+        console.log(books)
+        const book = books.find(book => book.id == parseInt(id));
+        console.log('Buku ditemukan:', book);
         setBookData(book);
+        setLoading(false);
       } catch (error) {
-        console.error("Error fetching data:", error);
+        console.error("Error pengambilan data:", error);
+        setError("Gagal mengambil data.");
+        setLoading(false);
       }
     };
 
     fetchBookData();
   }, [id]);
 
-  if (!bookData) {
+  if (loading) {
     return <div>Loading...</div>;
   }
 
+  if (error) {
+    return <div>{error}</div>;
+  }
+
+  if (!bookData) {
+    return <div>Book not found</div>;
+  }
+
   return (
-    <div className="container">
+    <div className="container" style={{backgroundColor:"black"}}>
       <div className="glory" style={{ marginTop: "30px" }}>
         <div className="main-7" style={{ position: "relative" }}>
           <img src={bookData.image} alt="Book Image" />
@@ -75,4 +92,4 @@ const ProductDetail = () => {
   );
 };
 
-export default ProductDetail;
+export default ProductDetail;

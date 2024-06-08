@@ -17,6 +17,8 @@
 .custom-navbar .navbar-brand {
   font-size: 32px;
   font-weight: 600;
+  display: flex;
+  align-items: center;
 }
 
 .custom-navbar .navbar-brand>span {
@@ -25,12 +27,12 @@
 
 .nav-item {
   font-size: 17px;
-
 }
 
 .custom-navbar .navbar-collapse {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .custom-navbar .navbar-toggler {
@@ -49,6 +51,14 @@
     margin-left: 15px;
     margin-right: 15px;
   }
+}
+
+.custom-navbar .custom-navbar-nav {
+  flex-direction: row;
+}
+
+.custom-navbar .custom-navbar-nav li {
+  list-style: none;
 }
 
 .custom-navbar .custom-navbar-nav li a {
@@ -92,7 +102,7 @@
 }
 
 .custom-navbar .custom-navbar-cta {
-  margin-left: auto;
+  display: flex;
   flex-direction: row;
   position: absolute;
   right: 0;
@@ -106,13 +116,37 @@
 }
 
 .custom-navbar .custom-navbar-cta li {
-  margin-left: 0px;
-  margin-right: 0px;
+  list-style: none;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .custom-navbar .custom-navbar-cta li:first-child {
   margin-right: 20px;
 }
+
+@media (max-width: 767.98px) {
+  .custom-navbar .navbar-collapse {
+    flex-direction: column;
+  }
+
+  .custom-navbar .navbar-nav {
+    align-items: center;
+    width: 100%;
+  }
+
+  .custom-navbar .custom-navbar-cta {
+    margin-top: 10px;
+  }
+
+  .custom-navbar .navbar-nav li a {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
+
 
 /* Hero */
 .hero {
@@ -219,8 +253,8 @@
   padding: 12px 30px;
   border-radius: 30px;
   color: #ffffff;
-  background: #2f2f2f;
-  border-color: #2f2f2f;
+  background: #006769;
+  border-color: #006769;
 }
 
 .btn:hover {
@@ -384,7 +418,7 @@
 
 .about_btn {
   padding: 10px 20px;
-  background: #089da1;
+  background: #006769;
   color: #fff;
   text-decoration: none;
   border-radius: 8px;
@@ -558,7 +592,7 @@
 .footer-section .border-top.copyright {
   font-size: 14px !important;
 }
-
+/*detail buku*/
 .judul-buku {
   position: absolute;
   top: 50%;
@@ -634,22 +668,18 @@
   justify-content: center;
 }
 
-.glory {
-  margin-left: 150px;
-  /* Mengatur margin kiri ke auto agar buku berada di sebelah kanan */
-}
-
 .icon-button {
   background-color: transparent;
   border: none;
   cursor: pointer;
+  
 }
 
 /* Styling untuk icon */
 .icon-button svg {
   width: 24px;
   height: 24px;
-  fill: #333;
+  fill: #006769;
   /* Warna ikon */
 }
 
@@ -666,3 +696,42 @@
   margin-bottom: 20px;
   /* Jarak antara tombol Beli dan teks Harga */
 }
+
+/*contact*/
+.Contact {
+  padding: 7rem 0; }
+
+.form-control {
+  height: 50px;
+  border-radius: 10px;
+  font-family: "Inter", sans-serif; }
+  .form-control:active, .form-control:focus {
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-color: #006769;
+    -webkit-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2); }
+  .form-control::-webkit-input-placeholder {
+    font-size: 14px; }
+  .form-control::-moz-placeholder {
+    font-size: 14px; }
+  .form-control:-ms-input-placeholder {
+    font-size: 14px; }
+  .form-control:-moz-placeholder {
+    font-size: 14px; }
+
+.service {
+  line-height: 1.5; }
+  .service .service-icon {
+    border-radius: 10px;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 50px;
+    flex: 0 0 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background: #006769;
+    margin-right: 20px;
+    color: #ffffff; }
+/*End contact*/

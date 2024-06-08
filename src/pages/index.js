@@ -5,7 +5,7 @@ import About from './About';
 import Shop from "./Shop";
 import Cart from "./Cart";
 import Contact from "./Contact"
-import ProductDetail from "../components/ProductDetail";
+
 
 import buku2 from '../components/img/buku 2.svg';
 import buku3 from '../components/img/buku3.svg';
@@ -14,4 +14,4 @@ import cross from '../components/img/cross.svg';
 
 
 
-export {Home,Navbar,Footer,buku2,buku3,buku4,cross,About,Shop,Cart,Contact,ProductDetail}
+export {Home,Navbar,Footer,buku2,buku3,buku4,cross,About,Shop,Cart,Contact}

@@ -1,6 +1,7 @@
 import React from "react";
 import Footer from "../components/Footer";
 import heroImage from '../components/img/bookF.svg'; 
+import ContactUs from "../components/ContactItem";
 import { Link } from "react-router-dom";
 
 
@@ -8,6 +9,7 @@ const Contact =()=>{
     return(
         <div>
             <HeroItem/>
+            <ContactUs/>
             <Footer/>
         </div>
     )

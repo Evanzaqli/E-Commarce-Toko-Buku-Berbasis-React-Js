@@ -3,6 +3,7 @@ import Card from "react-bootstrap/Card";
 import "../components/css/Shop.css";
 import { Button, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Shop() {
   const url = "http://localhost:3500/products";
@@ -142,16 +143,21 @@ function Shop() {
 }
 
 function CardProduct(props) {
+  const navigate = useNavigate();
   const formatPrice = (price) => {
     return new Intl.NumberFormat("id-ID", {
       style: "currency",
       currency: "IDR",
     }).format(price);
   };
+
+  const handleBuyNow = () => {
+    navigate("/checkout", { state: { product: props } });
+  };
   return (
     <Card style={{ width: "190px" }}>
       <Container>
-        <Link to={`/detail/${props.id}`}>
+        <Link to={`/ProductDetail/${props.id}`}>
           <Card.Img variant="top" src={props.image} />
         </Link>
         <Card.Body>
@@ -160,7 +166,7 @@ function CardProduct(props) {
           <p className="price">{formatPrice(props.price)}</p>
         </Card.Body>
       </Container>
-      <Button className="Buy">Buy Now</Button>
+      <Link to="./Checkout"><Button className="Buy" onClick={handleBuyNow}>Buy Now</Button></Link>
     </Card>
   );
 }
