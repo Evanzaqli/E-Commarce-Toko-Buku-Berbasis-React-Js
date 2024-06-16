@@ -13,7 +13,6 @@ function App() {
   return (
   <div className='App'>
   <Router>
-      <div>
       <Navbar />
         <Routes>
           <Route path='/' element={<Home />} />
@@ -22,9 +21,9 @@ function App() {
           <Route path='/Contact' element={<Contact />} />
           <Route path='/ProductDetail/:id' element={<ProductDetail />} />
           <Route path="/Checkout" element={<Checkout />} />
+          <Route path="/Cart" element={<Cart />} />
 
           </Routes>
-      </div>
     </Router>
    <Footer/>
     </div>

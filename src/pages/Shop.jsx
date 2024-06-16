@@ -64,7 +64,7 @@ function Shop() {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
-          <h2>Kategori</h2>
+          <h2>Category</h2>
           <ul className="list-group">
             {categories.map((category) => (
               <li
@@ -145,14 +145,14 @@ function Shop() {
 function CardProduct(props) {
   const navigate = useNavigate();
   const formatPrice = (price) => {
-    return new Intl.NumberFormat("id-ID", {
+    return new Intl.NumberFormat("id", {
       style: "currency",
       currency: "IDR",
     }).format(price);
   };
 
   const handleBuyNow = () => {
-    navigate("/checkout", { state: { product: props } });
+    navigate("/Checkout", { state: { product: props } });
   };
   return (
     <Card style={{ width: "190px" }}>
@@ -166,7 +166,7 @@ function CardProduct(props) {
           <p className="price">{formatPrice(props.price)}</p>
         </Card.Body>
       </Container>
-      <Link to="./Checkout"><Button className="Buy" onClick={handleBuyNow}>Buy Now</Button></Link>
+      <Button className="Buy" onClick={handleBuyNow}>Buy Now</Button>
     </Card>
   );
 }

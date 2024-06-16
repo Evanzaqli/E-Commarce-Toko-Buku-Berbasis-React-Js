@@ -4,12 +4,13 @@ import { useLocation } from "react-router-dom";
 const Checkout = () => {
   const location = useLocation();
   const { product } = location.state;
-
+console.log (product)
   return (
     <div className="checkout-container">
       <h1>Checkout</h1>
       <div className="checkout-details">
         <div className="checkout-item">
+         
           <img src={product.image} alt={product.title} className="checkout-item-image" />
           <div className="checkout-item-details">
             <h3>{product.title}</h3>

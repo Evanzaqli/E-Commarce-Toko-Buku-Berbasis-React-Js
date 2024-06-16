@@ -3,101 +3,139 @@
       {
         "id": 1,
         "title": "The Both Die At The End",
-        "price": 100.000,
-        "description": "Yuval Noah Harari",
+        "price": 94.000000,
+        "penulis": "Yuval Noah Harari",
         "image": "/image/buku 2.svg",
         "category": "Novel",
-        "detail" :"SKU: GRM-2284 ISBN: 9786024552848 Weight: 480 grams Dimensions (W/H/L): 20 cm / 14 cm / 0 cm Pages: 588 over Type: Soft Cover"
+        "detail" :"SKU: GRM-2284 ISBN: 9786024552848 Weight: 480 grams Dimensions (W/H/L): 20 cm / 14 cm / 0 cm Pages: 588 over Type: Soft Cover",
+        "synopsis":"Graphic Sapiens Volume 1 discusses the emergence of Homo sapiens on Earth and how Sapiens changed from an ordinary species to the dominant living creature in the world. This volume 2 discusses how agriculture, as an effort by Homo sapiens to support its growing population, has instead given rise to empires, property rights, inequality, and various sufferings due to war and disease. Also the role of writing, numbers and fiction in supporting civilizations that are increasingly larger and more complex. Historian Yuval Noah Harari tells the story of the birth and evolution of humanity, exploring how biology and history shape us and heighten our understanding of what it means to be human. This graphic adaptation re-presents and expands the content of the original Sapiens edition, in a comic format that is interesting, hilarious and enjoyable to listen to.",
+        "description":"Sapiens: A Graphic History, Volume 2 invites you on an enthralling journey through time—a vivid adventure beyond mere pages."
       },
       {
         "id": 2,
         "title": "The Art Of War",
-        "price": 80.999,
-        "description": "Adam Silvera",
+        "price": 800,
+        "penulis": "Adam Silvera",
         "image": "/image/buku3.svg",
-        "category": "Komik"
+        "category": "Komik",
+        "detail" :"",
+        "synopsis":"",
+        "description":""
       },
       {
         "id": 3,
         "title": "Product 3",
         "price": 19.99,
-        "description": "Description of Product 3",
+        "penulis": "Description of Product 3",
         "image": "/image/sapiens.svg",
-        "category": "Drama"
+        "category": "Drama",
+        "detail" :"",
+        "synopsis":"",
+        "description":""
       },
       {
         "id": 4,
         "title": "Product 4",
         "price": 49.99,
-        "description": "Description of Product 4",
+        "penulis": "Description of Product 4",
         "image": "/image/buku4.svg",
-        "category": "Action"
+        "category": "Action",
+        "detail" :"",
+        "synopsis":"",
+        "description":""
       },
       {
         "id": 5,
         "title": "Product 5",
         "price": 19.99,
-        "description": "Description of Product 3",
+        "penulis": "Description of Product 3",
         "image": "https://via.placeholder.com/150",
-        "category": "Drama"
+        "category": "Drama",
+        "detail" :"",
+        "synopsis":"",
+        "description":""
       },
       {
         "id": 6,
         "title": "Product 3",
         "price": 19.99,
-        "description": "Description of Product 3",
+        "penulis": "Description of Product 3",
         "image": "https://via.placeholder.com/150",
-        "category": "Novel"
+        "category": "Novel",
+        "detail" :"",
+        "synopsis":"",
+        "description":""
+
       },
       {
         "id": 7,
         "title": "Product 3",
         "price": 19.99,
-        "description": "Description of Product 3",
+        "penulis": "Description of Product 3",
         "image": "https://via.placeholder.com/150",
-        "category": "Action"
+        "category": "Action",
+        "detail" :"",
+        "synopsis":"",
+        "description":""
       },
       {
         "id": 8,
         "title": "Product 3",
         "price": 19.99,
-        "description": "Description of Product 3",
+        "penulis": "Description of Product 3",
         "image": "https://via.placeholder.com/150",
-        "category": "Drama"
+        "category": "Drama",
+        "detail" :"",
+        "synopsis":"",
+        "description":""
       },
       {
         "id": 9,
         "title": "Product 3",
         "price": 19.99,
-        "description": "Description of Product 3",
+        "penulis": "Description of Product 3",
         "image": "/image/sapiens.svg",
-        "category": "Drama"
+        "category": "Drama",
+        "detail" :"",
+        "synopsis":"",
+        "description":""
       },
       {
         "id": 10,
         "title": "Product 3",
         "price": 19.99,
-        "description": "Description of Product 3",
+        "penulis": "Description of Product 3",
         "image": "/image/sapiens.svg",
-        "category": "Drama"
+        "category": "Drama",
+        "detail" :"",
+        "synopsis":"",
+        "description":""
       },
       {
         "id": 11,
         "title": "Product 3",
         "price": 71.000,
-        "description": "Description of Product 3",
+        "penulis": "Description of Product 3",
         "image": "/image/sapiens.svg",
-        "category": "Drama"
+        "category": "Drama",
+        "detail" :"",
+        "synopsis":"",
+        "description":""
       },
       {
         "id": 12,
         "title": "Product 3",
         "price": 19.99,
-        "description": "Description of Product 3",
+        "penulis": "Description of Product 3",
         "image": "/image/sapiens.svg",
-        "category": "Drama"
+        "category": "Drama",
+        "detail" :"",
+        "synopsis":"",
+        "description":""
       }
       
+      
     ]
+    
   }
   
