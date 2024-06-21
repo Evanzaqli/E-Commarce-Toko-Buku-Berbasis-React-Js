@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { Bookmark,Share,ShoppingCart } from "react-feather"
-import { Link } from "react-router-dom";
+
 
 const ProductDetail = () => {
-  const { id } = useParams();
+  const { id} = useParams();
   const [bookData, setBookData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -15,7 +15,7 @@ const ProductDetail = () => {
     const fetchBookData = async () => {
       try {
         console.log(id);
-        const response = await axios.get('http://localhost:3500/products');
+        const response = await axios.get("http://localhost:3500/products");
         console.log('Respon API:', response);
         const books = response.data;
         console.log(books)
@@ -60,6 +60,16 @@ const ProductDetail = () => {
     setQuantity(prevQuantity => (prevQuantity > 1 ? prevQuantity - 1 : 1));
   };
 
+  function addToCartButton (id) {
+    axios.post("http://localhost:3500/cart", bookData)
+    .then((res) => {
+      console.log("sukses");
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+  }
+
   return (
     <section className="py-5" style={{ backgroundColor: 'white' }}>
   <div className="container">
@@ -72,7 +82,7 @@ const ProductDetail = () => {
 
       <main className="col-lg-6">
         <div className="ps-lg-3">
-          <p className="penulis" style={{ fontSize: "15px" }}>{bookData.penulis}</p>
+          <p className="outher" style={{ fontSize: "15px" }}>{bookData.outher}</p>
           <h4 className="title" style={{ fontWeight: "bold", color: "black" }}>{bookData.title}</h4>
           <div className="d-flex flex-row my-3">
             <div className="text-warning mb-1 me-2">
@@ -103,7 +113,7 @@ const ProductDetail = () => {
           </div>
           <hr />
           <a className="btn btn-warning shadow-0" style={{ background: "#f8b810", color: "white", margin: "10px", fontWeight: "bold" }}>BUY NOW</a>
-          <a className="btn btn-primary shadow-0" style={{ fontWeight: "bold", margin: "10px" }}>
+          <a className="btn btn-primary shadow-0" style={{ fontWeight: "bold", margin: "10px" }} onClick={() => addToCartButton(id)}>
             <ShoppingCart /> ADD TO CART
           </a>
           <Bookmark />

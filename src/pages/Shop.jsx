@@ -87,7 +87,7 @@ function Shop() {
                   id={product.id}
                   title={product.title}
                   price={product.price}
-                  description={product.description}
+                  author={product.author}
                   image={product.image}
                   category={product.category}
                 />
@@ -162,7 +162,7 @@ function CardProduct(props) {
         </Link>
         <Card.Body>
           <Card.Title>{props.title}</Card.Title>
-          <Card.Text>{props.description}</Card.Text>
+          <Card.Text>{props.author}</Card.Text>
           <p className="price">{formatPrice(props.price)}</p>
         </Card.Body>
       </Container>

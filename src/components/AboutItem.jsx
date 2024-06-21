@@ -1,8 +1,11 @@
 import React from "react";
 import aboutImage from '../components/img/about.png'
+import Visi from "./Visimisi";
+
 
 function AboutItem () {
     return (
+      <div>
       <div className="about" id="about">
         <div className="container">
           <div className="row">
@@ -19,6 +22,13 @@ function AboutItem () {
           </div>
         </div>
       </div>
+      <div className="container "style={{marginTop:"30px"}}>
+      <Visi/>
+      </div>
+      
+      </div>
+      
+       
     );
   }
 

@@ -231,22 +231,6 @@
   }
 }
 
-.hero .hero-img-wrap:after {
-  content: "";
-  position: absolute;
-  width: 255px;
-  height: 217px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  right: -100px;
-  top: 0px;
-}
-
-@media (min-width: 1200px) {
-  .hero .hero-img-wrap:after {
-    top: -40px;
-  }
-}
 
 .hero .btn {
   font-weight: 600;
