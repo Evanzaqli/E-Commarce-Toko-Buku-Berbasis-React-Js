@@ -10,14 +10,13 @@ function HeroItem() {
         <div className="row justify-content-center">
           <div className="col-lg-6">
               <h1>
-                Buy and sell your textbooks <span className="d-block">for the best price</span>
+                Buy and sell your <span className="d-block">textbooks for the <tr/> best price</span>
               </h1>
               <p className="mb-4">
                 Experience the convenience of borrowing e-books anytime, anywhere, with just a few clicks.
               </p>
               <p>
-                <Link className="btn btn-secondary me-2" to="/Shop">Shop Now</Link>
-                <Link className="btn btn-white-outline" to="/Home">Explore </Link>
+                <Link className="btn btn-secondary me-2" to="/Shop">Start Now</Link>
               </p>
   
           </div>

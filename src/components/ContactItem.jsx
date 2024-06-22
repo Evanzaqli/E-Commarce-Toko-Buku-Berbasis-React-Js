@@ -73,7 +73,7 @@ function ContactUs() {
                   <textarea name="" className="form-control" id="message" cols="30" rows="5"></textarea>
                 </div>
 
-                <button type="submit" className="btn btn-primary-hover-outline">Send Message</button>
+                <button type="submit" className="btn btn-primary-hover-outline" style={{backgroundColor:"#006769",color:"white"}}>Send Message</button>
               </form>
 
             </div>

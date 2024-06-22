@@ -4,6 +4,7 @@ import axios from "axios";
 import { Bookmark,Share,ShoppingCart } from "react-feather"
 
 
+
 const ProductDetail = () => {
   const { id} = useParams();
   const [bookData, setBookData] = useState(null);
@@ -70,6 +71,7 @@ const ProductDetail = () => {
     })
   }
 
+
   return (
     <section className="py-5" style={{ backgroundColor: 'white' }}>
   <div className="container">
@@ -117,6 +119,7 @@ const ProductDetail = () => {
             <ShoppingCart /> ADD TO CART
           </a>
           <Bookmark />
+         
         </div>
       </main>
     </div>

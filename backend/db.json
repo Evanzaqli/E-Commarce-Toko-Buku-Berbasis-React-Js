@@ -1,7 +1,7 @@
 {
   "products": [
     {
-      "id": 1,
+      "id": "1",
       "title": "The Both Die At The End",
       "price": 100,
       "author": "Adam Silvera",
@@ -12,7 +12,7 @@
       "description": "Adam Silvera reminds us that there’s no life without death and no love without loss in this devastating yet uplifting story about two people whose lives change over the course of one unforgettable day."
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "Psychology of Emotions",
       "price": 85,
       "author": "David J.Liebrman",
@@ -23,7 +23,7 @@
       "description": "What enables some people to navigate the ups and downs, twists and turns, obstacles, and challenges of life with calmness and control, while others are provoked by the slightest insult, crumble in the face of minor frustrations, and explode over small disappointments? The answer is: perspective."
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "Laut Bercerita",
       "price": 82,
       "author": "Leila S. Chudori",
@@ -34,7 +34,7 @@
       "description": "This novel embodies in fiction the idea that we, as the Indonesian nation, must not forget the history that has shaped and supported our country. It also invites readers to uncover the mysteries of our nation that are not taught in schools. Although this novel is a work of fiction, Laut Bercerita shows readers that this country once experienced a dark period of governance."
     },
     {
-      "id": 4,
+      "id": "4",
       "title": "Gadis Kretek",
       "price": 60,
       "author": "Ratih Kumala",
@@ -45,7 +45,7 @@
       "description": "Gadis Kretek is a novel written by Ratih Kumala. This novel portrays the development of the kretek industry during the Dutch colonial period until independence. In this story, the owner of the kretek industry (Romo) passes it down to his eldest son named Tegar."
     },
     {
-      "id": 5,
+      "id": "5",
       "title": "Think and Grow Rich",
       "price": 155,
       "author": "Napoleon Hill",
@@ -56,7 +56,7 @@
       "description": "This book was written by Napoleon Hill (October 26, 1883 – November 8, 1970) was an American author. He is widely regarded as one of the greatest successful authors of books. His best-known book, Think and Grow Rich (1937), is one of the best-selling books of all time."
     },
     {
-      "id": 6,
+      "id": "6",
       "title": "Mahajana",
       "price": 90,
       "author": "Gigrey",
@@ -67,7 +67,7 @@
       "description": "Waking up and resuming life as a teenager once more, Hayam Wuruk, the king of the Majapahit Kingdom, lived with the burden of an unresolved past. Time kept ticking away until one day, a second chance presented itself. The figure who made him realize he was late to love also appeared. Although in a different form, Hayam believed that Sachiandra Dewi was the reincarnation of Sri Sudewi, his lover from the Majapahit era. The presence of the girl once again prompted Hayam Wuruk to learn from the past to correct his mistakes in the second chance given to him."
     },
     {
-      "id": 7,
+      "id": "7",
       "title": "Pulang",
       "price": 95,
       "author": "Leila S. Chudori",
@@ -78,7 +78,7 @@
       "description": "Pulang is the first novel in a trilogy that tells the story of the events of 1965, depicting family drama, friendship, love, and betrayal against the backdrop of three historical events: Indonesia in September 30, 1965, France in May 1968, and Indonesia in May 1998."
     },
     {
-      "id": 8,
+      "id": "8",
       "title": "The Mountain is You",
       "price": 107,
       "author": "Brianna Wiest",
@@ -89,7 +89,7 @@
       "description": "In this book, Brianna Wiest uses examples from everyday life to illustrate various self-sabotaging behaviors and provides detailed explanations on how to overcome them. She encourages you to delve into your heart and mind, let go of painful pasts, and discover your best potential for the future. Ultimately, it's not the high mountain that you have to conquer, but yourself."
     },
     {
-      "id": 9,
+      "id": "9",
       "title": "Awan-awan di Atas Kepala Kita",
       "price": 80,
       "author": "Miranda Malonka",
@@ -100,7 +100,7 @@
       "description": "The novel 'YOUNG ADULT: CLOUDS ABOVE OUR HEADS' by Miranda Malonka tells the story of Benjamin Iskandar, who is celebrating his nineteenth birthday. However, Benjamin decides to end his life by suicide as he feels unable to cope with the problems he's facing. As he's about to go through with it, Kirana Kharitonova, who happens to pass by, finds Benjamin and immediately helps him, ultimately saving him from taking his own life."
     },
     {
-      "id": 10,
+      "id": "10",
       "title": "Love for Imperfect Things",
       "price": 190,
       "author": "Haemin Sunim",
@@ -111,7 +111,7 @@
       "description": "Many of us respond to the pressures of life by turning inward and ignoring problems, sometimes resulting in anxiety or depression. Others react by working harder, hoping that this will make ourselves and the people we love happier. But what if being yourself is enough?"
     },
     {
-      "id": 11,
+      "id": "11",
       "title": "CunningFolk",
       "price": "160.000",
       "author": "Tabitha Stanmmore",
@@ -122,7 +122,7 @@
       "description": "It’s 1600 and you’ve lost your precious silver spoons, or maybe they’ve been stolen. Perhaps your child has a fever. Or you’re facing trial. Maybe you’re looking for love or escaping a husband. What do you do?"
     },
     {
-      "id": 12,
+      "id": "12",
       "title": "TheSilentFactory",
       "price": 220,
       "author": "Bridget Collins",
@@ -135,7 +135,7 @@
   ],
   "cart": [
     {
-      "id": 1,
+      "id": "1",
       "title": "The Both Die At The End",
       "price": 100,
       "author": "Adam Silvera",
@@ -146,7 +146,7 @@
       "description": "Adam Silvera reminds us that there’s no life without death and no love without loss in this devastating yet uplifting story about two people whose lives change over the course of one unforgettable day."
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "Laut Bercerita",
       "price": 82,
       "author": "Leila S. Chudori",
@@ -157,7 +157,7 @@
       "description": "This novel embodies in fiction the idea that we, as the Indonesian nation, must not forget the history that has shaped and supported our country. It also invites readers to uncover the mysteries of our nation that are not taught in schools. Although this novel is a work of fiction, Laut Bercerita shows readers that this country once experienced a dark period of governance."
     },
     {
-      "id": 4,
+      "id": "4",
       "title": "Gadis Kretek",
       "price": 60,
       "author": "Ratih Kumala",
@@ -166,6 +166,28 @@
       "detail": "Number of Pages : 288, Publisher : Gramedia Pustaka Utama, Publication Date : July 7, 2019, Weight : 0.16 kg, ISBN : 9789792281415, Width : 13.5 cm, Language : Indonesian, Length : 20.0 cm",
       "synopsis": "Pak Raja is on his deathbed. As he waits for his end, he calls out the name of a woman who is not his wife; Jeng Yah. His three children, heirs to the Kretek Djagad Raja, are consumed by worry. The mother, already burning with jealousy, is further stoked by her husband's final request to meet Jeng Yah. Thus, racing against the angel of death, Lebas, Karim, and Tegar venture into the remote corners of Java to find Jeng Yah before death claims their father.",
       "description": "Gadis Kretek is a novel written by Ratih Kumala. This novel portrays the development of the kretek industry during the Dutch colonial period until independence. In this story, the owner of the kretek industry (Romo) passes it down to his eldest son named Tegar."
+    },
+    {
+      "id": "1",
+      "title": "The Both Die At The End",
+      "price": 100,
+      "author": "Adam Silvera",
+      "image": "/image/TheyBothDieAtTheEnd.jpg",
+      "category": "Fiksi",
+      "detail": "Format : 389 pages Hardcover Published : September 5, 2017 by Quill Tree Books ISBN10: 0062457799 Language : English",
+      "synopsis": "On September 5, a little after midnight, Death-Cast calls Mateo Torrez and Rufus Emeterio to give them some bad news: They’re going to die today. Mateo and Rufus are total strangers, but, for different reasons, they’re both looking to make a new friend on their End Day. The good news: There’s an app for that. It’s called the Last Friend, and through it, Rufus and Mateo are about to meet up for one last great adventure—to live a lifetime in a single day.",
+      "description": "Adam Silvera reminds us that there’s no life without death and no love without loss in this devastating yet uplifting story about two people whose lives change over the course of one unforgettable day."
+    },
+    {
+      "id": "1",
+      "title": "The Both Die At The End",
+      "price": 100,
+      "author": "Adam Silvera",
+      "image": "/image/TheyBothDieAtTheEnd.jpg",
+      "category": "Fiksi",
+      "detail": "Format : 389 pages Hardcover Published : September 5, 2017 by Quill Tree Books ISBN10: 0062457799 Language : English",
+      "synopsis": "On September 5, a little after midnight, Death-Cast calls Mateo Torrez and Rufus Emeterio to give them some bad news: They’re going to die today. Mateo and Rufus are total strangers, but, for different reasons, they’re both looking to make a new friend on their End Day. The good news: There’s an app for that. It’s called the Last Friend, and through it, Rufus and Mateo are about to meet up for one last great adventure—to live a lifetime in a single day.",
+      "description": "Adam Silvera reminds us that there’s no life without death and no love without loss in this devastating yet uplifting story about two people whose lives change over the course of one unforgettable day."
     }
   ]
 }

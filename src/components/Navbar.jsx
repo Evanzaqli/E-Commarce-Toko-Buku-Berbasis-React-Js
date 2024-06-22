@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import logo from './img/logo4 2.svg';
+import logo from './img/books.png';
 import userIcon from './img/user.svg';
 import cartIcon from './img/cart.svg';
 import Login from '../pages/Login';
@@ -22,7 +22,7 @@ function Navbar() {
         <div className="container">
           <Link className="navbar-brand" to="/">
             <img src={logo} alt="Logo" width="60px" />
-            <span></span>
+            <span className='logo'>LiteraryLoom</span>
           </Link>
 
           <button

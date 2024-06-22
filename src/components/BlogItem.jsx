@@ -11,9 +11,7 @@ const BlogItem =()=>{
           <div className="col-md-6">
             <h2 className="section-title">Recent Blog</h2>
           </div>
-          <div className="col-md-6 text-start text-md-end">
-            <a href="#" className="more">View All Posts</a>
-          </div>
+
         </div>
 
         <div className="row">

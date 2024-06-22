@@ -1,37 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "../components/css/cart.css";
-import Cart1 from "../components/img/buku 2.svg";
-import Cart2 from "../components/img/Awan-awanDiAtasKepalaKita.jpg";
-import Cart3 from "../components/img/GadisKretek.jpg";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { Trash2 } from "react-feather"
+
 
 function Cart() {
   const [cartItems, setCartItems] = useState([
-    {
-      id: 1,
-      image: Cart1,
-      name: "They Both Die At The End",
-      author: "Adam Silvera",
-      price: 100.00,
-      quantity: 1,
-    },
-    {
-      id: 2,
-      image: Cart2,
-      name: "Awan-awan di Atas Kepala Kita",
-      details: "Miranda Malonka",
-      price: 80.000,
-      quantity: 1,
-    },
-    {
-      id: 3,
-      image: Cart3,
-      name: "Gadis Kretek",
-      details: "Ratih Kumala",
-      price: 60.000,
-      quantity: 1,
-    }
+    
   ]);
   const [tax, setTax] = useState(2.0);
 
@@ -71,6 +47,10 @@ function Cart() {
     });
     return total;
   };
+
+  const Checkout=()=>{
+    window.location.href='Checkout'
+  }
 
   const formatPrice = (price) => {
     return new Intl.NumberFormat("id-ID", {
@@ -145,13 +125,7 @@ function Cart() {
                     </div>
                     <div className="col-lg col-sm-6 d-flex justify-content-sm-center justify-content-md-start justify-content-lg-center justify-content-xl-end mb-2">
                       <div className="float-md-end">
-                        <button
-                          className="btn btn-success border text-danger icon-hover-danger"
-                          style={{ borderRadius: '5px', backgroundColor: '#f9bf29', padding: '5px 10px', color: 'white' }}
-                          onClick={() => handleRemoveItem(item.id)}
-                        >
-                          Delete
-                        </button>
+                        <Trash2/>
                       </div>
                     </div>
                   </div>
@@ -176,6 +150,8 @@ function Cart() {
           <div className="col-lg-3">
             <div className="card shadow-0 border">
               <div className="card-body">
+              <h4 className="card-title mb-4">Order Summary</h4>
+              <hr style={{fontSize:'20px',color:"black"}}></hr>
                 <div className="d-flex justify-content-between">
                   <p className="mb-2">Total price:</p>
                   <p className="mb-2">{formatPrice(totalPrice)}</p>
@@ -191,7 +167,7 @@ function Cart() {
                 </div>
 
                 <div className="mt-3">
-                  <button className="btn btn-success w-100 shadow-0 mb-2" style={{ backgroundColor: '#006769', borderRadius: "5px", border: '0' }}>
+                  <button className="btn btn-success w-100 shadow-0 mb-2" style={{ backgroundColor: '#006769', borderRadius: "5px", border: '0' }} onClick={Checkout}>
                     Checkout
                   </button>
                   <Link className="btn w-100 mt-2" to="/Shop" style={{ backgroundColor: ' #f9bf29', borderRadius: "5px", border: '0' }}>

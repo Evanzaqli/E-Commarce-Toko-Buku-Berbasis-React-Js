@@ -22,10 +22,6 @@ function AboutItem () {
           </div>
         </div>
       </div>
-      <div className="container "style={{marginTop:"30px"}}>
-      <Visi/>
-      </div>
-      
       </div>
       
        
