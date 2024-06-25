@@ -12,7 +12,7 @@ function FavoritItem() {
                 With e-books, you can bring your book collection to your mobile device or tablet. Enjoy reading on the go,
                 in the park, or at work without having to carry around multiple physical books.
               </p>
-              <p><a href="shop.html" className="btn">Explore</a></p>
+              <p><a href="/Shop" className="btn" style={{backgroundColor:"#006769",color:"white"}}>Explore</a></p>
             </div>
   
             <div className="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">

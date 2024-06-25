@@ -14,8 +14,9 @@ import SignUp from './pages/SignUp'
 function App() {
   return (
   <div className='App'>
+   
   <Router>
-  <Navbar />
+  <Navbar/>
         <Routes>
           
           <Route path='/' element={<Home />} />

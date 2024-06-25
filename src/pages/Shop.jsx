@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 function Shop() {
-  const url = "http://localhost:3500/products";
+  const url = "http://localhost:5100/api/product";
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("All Books");

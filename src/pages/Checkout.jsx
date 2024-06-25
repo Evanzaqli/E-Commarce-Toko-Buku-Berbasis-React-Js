@@ -18,29 +18,29 @@ function Checkout() {
                 <h6 className="my-0">Nike jeans</h6>
                 <small className="text-muted">Best Quality</small>
               </div>
-              <span className="text-muted">₹500</span>
+              <span className="text-muted">500</span>
             </li>
             <li className="list-group-item d-flex justify-content-between lh-sm">
               <div>
                 <h6 className="my-0">Shoe from bata</h6>
                 <small className="text-muted">Best product</small>
               </div>
-              <span className="text-muted">₹1000</span>
+              <span className="text-muted">1000</span>
             </li>
             <li className="list-group-item d-flex justify-content-between lh-sm">
               <div>
                 <h6 className="my-0">Focut shirt </h6>
                 <small className="text-muted">Ladki pat jayegi</small>
               </div>
-              <span className="text-muted">₹500</span>
+              <span className="text-muted">500</span>
             </li>
             <li className="list-group-item d-flex justify-content-between">
-              <span>Total (Rupee)</span>
-              <strong>₹1500</strong>
+              <span>Total Payment</span>
+              <strong>Rp.1500</strong>
             </li>
           </ul>
           <button className="w-100 btn btn-danger btn-lg" style={{backgroundColor:"#006769"}} type="submit">
-              Continue to checkout
+              Place Order
             </button>
         </div>
         <div className="col-md-7 col-lg-8">
@@ -49,7 +49,7 @@ function Checkout() {
             <div className="row g-3">
               <div className="col-sm-6">
                 <label htmlFor="firstName" className="form-label">
-                  First name
+                  Full Name
                 </label>
                 <input
                   type="text"
@@ -59,13 +59,13 @@ function Checkout() {
                   required
                 />
                 <div className="invalid-feedback">
-                  Valid first name is required.
+                  Valid full name is required.
                 </div>
               </div>
 
               <div className="col-sm-6">
                 <label htmlFor="lastName" className="form-label">
-                  Last name
+                  Phone Number
                 </label>
                 <input
                   type="text"
@@ -75,7 +75,7 @@ function Checkout() {
                   required
                 />
                 <div className="invalid-feedback">
-                  Valid last name is required.
+                  Valid Phone number is required.
                 </div>
               </div>
 
@@ -95,9 +95,7 @@ function Checkout() {
               </div>
 
               <div className="col-12">
-                <label htmlFor="address" className="form-label">
-                  Address
-                </label>
+                <label htmlFor="address" className="form-label">Delivery Address</label>
                 <input
                   type="text"
                   className="form-control"
@@ -112,7 +110,7 @@ function Checkout() {
 
               <div className="col-md-5">
                 <label htmlFor="country" className="form-label">
-                  Country
+                  Province
                 </label>
                 <input
                   type="state"
@@ -127,7 +125,7 @@ function Checkout() {
 
               <div className="col-md-4">
                 <label htmlFor="state" className="form-label">
-                  State
+                Postal Code
                 </label>
                 <input
                   type="state"

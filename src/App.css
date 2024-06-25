@@ -19,16 +19,16 @@
 }
 
 /* Navbar */
-.logo{
+.logo {
   font-size: 20px;
-  font-family: Cinzel;
+  font-family: 'Cinzel', sans-serif; /* Menggunakan font Cinzel untuk logo */
   font-weight: 800;
   
 }
+
 .custom-navbar {
   background: #006769 !important;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  
 }
 
 .custom-navbar .navbar-brand {
@@ -36,53 +36,20 @@
   font-weight: 600;
   display: flex;
   align-items: center;
-  
 }
-
-
-.nav-item {
-  font-size: 17px;
-}
-
-.custom-navbar .navbar-collapse {
+#navbar{
   display: flex;
   justify-content: center;
-  align-items: center;
-}
+  margin-right: 200px;
 
-.custom-navbar .navbar-toggler {
-  border-color: transparent;
-}
-
-.custom-navbar .navbar-toggler:active,
-.custom-navbar .navbar-toggler:focus {
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  outline: none;
-}
-
-@media (min-width: 992px) {
-  .custom-navbar .custom-navbar-nav li {
-    margin-left: 15px;
-    margin-right: 15px;
-  }
-}
-
-.custom-navbar .custom-navbar-nav {
-  flex-direction: row;
-}
-
-.custom-navbar .custom-navbar-nav li {
-  list-style: none;
+  
 }
 
 .custom-navbar .custom-navbar-nav li a {
   font-weight: bold;
   color: #ffffff !important;
-  opacity: 0.5;
   transition: 0.3s all ease;
   position: relative;
-  font-family:Roboto;
 }
 
 @media (min-width: 768px) {
@@ -100,6 +67,7 @@
     transition: 0.15s all ease-out;
   }
 }
+
 
 .custom-navbar .custom-navbar-nav li a:hover {
   opacity: 1;
@@ -160,7 +128,6 @@
     text-align: center;
   }
 }
-
 
 
 
@@ -558,8 +525,9 @@
 }
 
 .footer-section .footer-logo-wrap .footer-logo {
+  font-family: Conzel;
   font-size: 32px;
-  font-weight: 500;
+  font-weight: 800;
   text-decoration: none;
   color: #3b5d50;
 }

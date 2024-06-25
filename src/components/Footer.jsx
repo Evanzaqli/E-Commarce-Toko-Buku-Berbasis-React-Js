@@ -39,7 +39,7 @@ function Footer() {
         <div className="row g-5 mb-5">
           <div className="col-lg-4">
             <div className="mb-4 footer-logo-wrap">
-              <a href="#" className="footer-logo">Code Crafters<span>.</span></a>
+              <a href="#" className="footer-logo">Literary Loom<span>.</span></a>
             </div>
             <p className="mb-4">
               Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio quis nisl dapibus malesuada.
@@ -59,7 +59,7 @@ function Footer() {
               <div className="col-6 col-sm-6 col-md-3">
                 <ul className="list-unstyled">
                   <li><a href="#">About us</a></li>
-                  <li><a href="#">Services</a></li>
+                  <li><a href="#">Shop</a></li>
                   <li><a href="#">Blog</a></li>
                   <li><a href="#">Contact us</a></li>
                 </ul>
@@ -79,14 +79,6 @@ function Footer() {
                   <li><a href="#">Our team</a></li>
                   <li><a href="#">Leadership</a></li>
                   <li><a href="#">Privacy Policy</a></li>
-                </ul>
-              </div>
-
-              <div className="col-6 col-sm-6 col-md-3">
-                <ul className="list-unstyled">
-                  <li><a href="#">Nordic Chair</a></li>
-                  <li><a href="#">Kruzo Aero</a></li>
-                  <li><a href="#">Ergonomic Chair</a></li>
                 </ul>
               </div>
             </div>

@@ -4,7 +4,7 @@ import image from "./img/vsmimg.jpeg"
 function Visi (){
     return(
         
-        <div className="container ">
+        <div className="container " style={{marginTop:"40px"}}> 
             <div className="row">
                 <div className="col-lg-6">
                     <div className="visi-misi-title" >

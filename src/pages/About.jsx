@@ -1,7 +1,9 @@
 import React from "react";
 import AboutItem from "../components/AboutItem";
-import HeroItem from "../components/Hero";
 import Visi from "../components/Visimisi";
+import Team from "../components/TeamItem";
+
+
 
 
 const AboutUs =()=>{
@@ -9,6 +11,7 @@ const AboutUs =()=>{
         <div>
             <AboutItem/>
             <Visi/>
+            <Team/>
         </div>
     )
 }
