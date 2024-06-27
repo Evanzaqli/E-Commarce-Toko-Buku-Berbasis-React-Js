@@ -1,5 +1,6 @@
 import React from 'react';
 import envelopeImage from './img/envelope-outline.svg';
+import { Phone,MapPin } from 'react-feather';
 
 
 function Footer() {
@@ -37,7 +38,7 @@ function Footer() {
         </div>
 
         <div className="row g-5 mb-5">
-          <div className="col-lg-4">
+          <div className="col-lg-6">
             <div className="mb-4 footer-logo-wrap">
               <a href="#" className="footer-logo">Literary Loom<span>.</span></a>
             </div>
@@ -54,31 +55,23 @@ function Footer() {
             </ul>
           </div>
 
-          <div className="col-lg-8">
+          <div className="col-lg-6">
             <div className="row links-wrap">
-              <div className="col-6 col-sm-6 col-md-3">
+              <div className="col-lg-6">
                 <ul className="list-unstyled">
-                  <li><a href="#">About us</a></li>
+                  <h4><a >Quick Links</a></h4>
+                  <li><a href="/About">About Us</a></li>
                   <li><a href="#">Shop</a></li>
-                  <li><a href="#">Blog</a></li>
                   <li><a href="#">Contact us</a></li>
                 </ul>
               </div>
 
-              <div className="col-6 col-sm-6 col-md-3">
+              <div className="col-lg-6">
                 <ul className="list-unstyled">
-                  <li><a href="#">Support</a></li>
-                  <li><a href="#">Knowledge base</a></li>
-                  <li><a href="#">Live chat</a></li>
-                </ul>
-              </div>
-
-              <div className="col-6 col-sm-6 col-md-3">
-                <ul className="list-unstyled">
-                  <li><a href="#">Jobs</a></li>
-                  <li><a href="#">Our team</a></li>
-                  <li><a href="#">Leadership</a></li>
-                  <li><a href="#">Privacy Policy</a></li>
+                  <h4><a >More information</a></h4>
+                  <li><a href="#"><Phone size={15}/> +62 822-6724-7423</a></li>
+                  <li><a href='https://maps.app.goo.gl/jZWMNUcHpdjgPMrP8'><MapPin size={15}/>Jl. Ring Road Utara, Ngringin, Condongcatur, Kec. Depok, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55281</a></li>
+                 
                 </ul>
               </div>
             </div>
