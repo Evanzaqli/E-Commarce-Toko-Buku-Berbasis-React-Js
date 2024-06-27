@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from './img/books.png';
-
 import cartIcon from './img/cart.svg';
 import Login from '../pages/Login';
 import SignUp from '../pages/SignUp';
@@ -19,7 +18,7 @@ function Navbar() {
 
   return (
     <>
-      <nav className="custom-navbar navbar navbar-expand-md navbar-dark bg-dark " aria-label="Navbar">
+      <nav className="custom-navbar navbar navbar-expand-md navbar-dark bg-dark fixed-top" aria-label="Navbar">
         <div className="container">
           <Link className="navbar-brand" to="/">
             <img src={logo} alt="Logo" width="60px" />
@@ -63,11 +62,11 @@ function Navbar() {
               </li>
               
               <li className="nav-item" style={{marginTop:"5px"}}>
-              <button className="nav-link btn btn-link" onClick={handleShow}>
+                <button className="nav-link btn btn-link" onClick={handleShow}>
                   Login
                 </button>
               </li>
-              <li className="nav-item"style={{marginTop:"5px"}}>
+              <li className="nav-item" style={{marginTop:"5px"}}>
                 <button className="nav-link btn btn-link" onClick={registerHandleShow}>
                   Sign Up
                 </button>
@@ -79,6 +78,9 @@ function Navbar() {
 
       <Login show={showLogin} handleClose={handleClose} />
       <SignUp show={showRegister} handleClose={registerHandleClose} />
+      
+      {/* Spacer to prevent content from being hidden behind fixed navbar */}
+      <div style={{ height: '80px' }}></div>
     </>
   );
 }
