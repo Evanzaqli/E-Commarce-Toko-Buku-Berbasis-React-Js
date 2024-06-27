@@ -5,15 +5,15 @@ import { Instagram ,Linkedin,Twitter} from 'react-feather';
 
 function Team() {
     const teamMembers = [
-        { id: 1, name: 'Evan Zaqli', role: 'Frontend', image: '/image/6(sq).jpeg' },
-        { id: 2, name: 'Jane Smith', role: 'CTO', image: '/image/2.jpg' },
-        { id: 3, name: 'Alice Johnson', role: 'Designer', image: '/image/3(sq).jpg' },
-        { id: 4, name: 'Bob Williams', role: 'Developer', image: '/image/4(sq).jpeg' },
-        { id: 5, name: 'Eve Brown', role: 'Marketing', image: '/image/1(sq).jpg' },
-        { id: 6, name: 'Charlie Davis', role: 'Sales', image: '/image/5(sq).jpeg' }
+        { id: 1, name: 'Evan Zaqli', role: 'Front end', image: '/image/6(sq).jpeg',nim :'22.11.4713' },
+        { id: 2, name: 'Rin ', role: 'Back end', image: '/image/2.jpg',nim :'22.11.4713' },
+        { id: 3, name: 'Inez', role: 'Back end', image: '/image/3(sq).jpg',nim :'22.11.4713' },
+        { id: 4, name: 'Sekar', role: 'Fornt end', image: '/image/4(sq).jpeg',nim :'22.11.4713' },
+        { id: 5, name: 'Aryan', role: 'Fornt end ', image: '/image/1(sq).jpg' ,nim :'22.11.4713'},
+        { id: 6, name: 'Dilla', role: 'Back End', image: '/image/5(sq).jpeg' ,nim :'22.11.4713'}
     ];
 
-    // Menyusun anggota tim ke dalam kelompok-kelompok dengan 3 anggota per kelompok
+   
     const groupedMembers = [];
     for (let i = 0; i < teamMembers.length; i += 3) {
         groupedMembers.push(teamMembers.slice(i, i + 3));
@@ -21,7 +21,7 @@ function Team() {
 
     return (
         <div className="container" style={{ marginTop: "40px" }}>
-            <h4 style={{ textAlign: "center", fontWeight: "bold" }}>Our Team</h4>
+            <h4 style={{ textAlign: "center", fontWeight: "bold",color:"black" }}>Our Team</h4>
             <Carousel interval={5000} indicators={false} style={{ maxHeight: "500px" }}>
                 {groupedMembers.map((group, index) => (
                     <Carousel.Item key={index}>
@@ -32,7 +32,14 @@ function Team() {
                                         <Card.Img variant="top" src={member.image} style={{ maxHeight: "300px", objectFit: "cover", borderRadius: "10px" }} />
                                         <Card.Body>
                                             <Card.Title>{member.name}</Card.Title>
-                                            <Card.Text>{member.role}</Card.Text>
+                                            <Card.Text>{member.nim}</Card.Text>
+                                            <Card.Text style={{color:"black"}}>{member.role}</Card.Text>
+                                            <div style={{ display: 'flex', }}>
+                                                <Linkedin style={{ margin: '5px', cursor: 'pointer' }} />
+                                                <Instagram style={{ margin: '5px', cursor: 'pointer' }} />
+                                                <Twitter style={{ margin: '5px', cursor: 'pointer' }} />
+                                            </div>
+
                                         </Card.Body>
                                     </Card>
                                 </Col>
