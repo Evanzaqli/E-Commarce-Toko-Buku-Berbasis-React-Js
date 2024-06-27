@@ -21,10 +21,11 @@
 /* Navbar */
 .logo {
   font-size: 20px;
-  font-family: 'Cinzel', sans-serif; /* Menggunakan font Cinzel untuk logo */
+  font-family: 'Cinzel', sans-serif; 
   font-weight: 800;
   
 }
+
 
 .custom-navbar {
   background: #006769 !important;
@@ -41,15 +42,17 @@
   display: flex;
   justify-content: center;
   margin-right: 200px;
+  
 
   
 }
 
 .custom-navbar .custom-navbar-nav li a {
   font-weight: bold;
-  color: #ffffff !important;
+  color: white !important;
   transition: 0.3s all ease;
   position: relative;
+  font-size: 12px;
 }
 
 @media (min-width: 768px) {
