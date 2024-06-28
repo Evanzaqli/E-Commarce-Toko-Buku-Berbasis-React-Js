@@ -17,7 +17,7 @@ function FavoritItem() {
   
             <div className="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
               <a className="product-item" href="cart.html">
-                <Link to="/Detail"><img src={buku2} style={{ height: '250px' }} className="img-fluid product-thumbnail" alt="They Both Die At The End" /></Link>
+                <Link to=''><img src={buku2} style={{ height: '250px' }} className="img-fluid product-thumbnail" alt="They Both Die At The End" /></Link>
                 <h3 className="product-title">They Both Die At The End</h3>
                 <strong className="product-price">Rp 120.000</strong>
                 <span className="icon-cross">

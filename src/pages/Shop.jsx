@@ -4,9 +4,10 @@ import "../components/css/Shop.css";
 import { Button, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import Pagination from 'react-bootstrap/Pagination'; 
 
 function Shop() {
-  const url = "http://localhost:5100/api/product";
+  const url = "http://localhost:3500/products";
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("All Books");
@@ -53,6 +54,10 @@ function Shop() {
   );
   const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
 
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
+
   return (
     <div className="container-fluid">
       <div className="row" style={{ backgroundColor: "white" }}>
@@ -78,6 +83,33 @@ function Shop() {
               </li>
             ))}
           </ul>
+          <div className="d-flex  mt-4">
+            <Pagination>
+              <Pagination.Prev
+                onClick={() =>
+                  setCurrentPage((prevPage) =>
+                    prevPage > 1 ? prevPage - 1 : prevPage
+                  )
+                }
+              />
+              {Array.from({ length: totalPages }, (_, index) => (
+                <Pagination.Item
+                  key={index + 1}
+                  active={index + 1 === currentPage}
+                  onClick={() => handlePageChange(index + 1)}
+                >
+                  {index + 1}
+                </Pagination.Item>
+              ))}
+              <Pagination.Next
+                onClick={() =>
+                  setCurrentPage((nextPage) =>
+                    nextPage < totalPages ? nextPage + 1 : nextPage
+                  )
+                }
+              />
+            </Pagination>
+          </div>
         </div>
         <div className="col-8 mt-3">
           <div className="row">
@@ -95,47 +127,7 @@ function Shop() {
             ))}
           </div>
 
-          <nav aria-label="Page navigation example">
-            <ul className="pagination justify-content-center">
-              <li
-                className={`page-item ${currentPage === 1 ? "disabled" : ""}`}
-              >
-                <Link
-                  className="page-link"
-                  onClick={() => setCurrentPage(currentPage - 1)}
-                >
-                  Previous
-                </Link>
-              </li>
-              {[...Array(totalPages)].map((_, index) => (
-                <li
-                  key={index}
-                  className={`page-item ${
-                    currentPage === index + 1 ? "active" : ""
-                  }`}
-                >
-                  <Link
-                    className="page-link"
-                    onClick={() => setCurrentPage(index + 1)}
-                  >
-                    {index + 1}
-                  </Link>
-                </li>
-              ))}
-              <li
-                className={`page-item ${
-                  currentPage === totalPages ? "disabled" : ""
-                }`}
-              >
-                <Link
-                  className="page-link"
-                  onClick={() => setCurrentPage(currentPage + 1)}
-                >
-                  Next
-                </Link>
-              </li>
-            </ul>
-          </nav>
+          
         </div>
       </div>
     </div>
@@ -154,14 +146,15 @@ function CardProduct(props) {
   const handleBuyNow = () => {
     navigate("/Checkout", { state: { product: props } });
   };
+  
   return (
-    <Card style={{ width: "190px" }}>
+    <Card style={{ width: "183px" }}>
       <Container>
         <Link to={`/ProductDetail/${props.id}`}>
           <Card.Img variant="top" src={props.image} />
         </Link>
         <Card.Body>
-          <Card.Title>{props.title}</Card.Title>
+          <Card.Title style={{fontSize:"15px"}}>{props.title}</Card.Title>
           <Card.Text>{props.author}</Card.Text>
           <p className="price">{formatPrice(props.price)}</p>
         </Card.Body>

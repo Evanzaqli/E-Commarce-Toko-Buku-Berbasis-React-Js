@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { Bookmark, ShoppingCart } from "react-feather";
+import swal from "sweetalert";
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -13,7 +14,7 @@ const ProductDetail = () => {
   useEffect(() => {
     const fetchBookData = async () => {
       try {
-        const response = await axios.get(`http://localhost:5100/api/product/${id}`);
+        const response = await axios.get(`http://localhost:3500/products/${id}`);
         const book = response.data;
         setBookData(book);
         setLoading(false);
@@ -42,16 +43,31 @@ const ProductDetail = () => {
     setQuantity((prevQuantity) => (prevQuantity > 1 ? prevQuantity - 1 : 1));
   };
 
-  const addToCartButton = () => {
-    axios.post("http://localhost:5100/api/cart", bookData)
-      .then((res) => {
-        console.log("Added to cart successfully:", res.data);
-        // Implement any additional logic upon successful addition to cart
-      })
-      .catch((err) => {
-        console.error("Error adding to cart:", err);
-        // Handle error state
-      });
+  const addToCart = async (product) => {
+    const productWithQuantity = {
+      ...product,
+      quantity,
+    };
+
+    try {
+      const response = await axios.post('http://localhost:3500/cart', productWithQuantity);
+      console.log('Produk berhasil ditambahkan ke keranjang:', response.data);
+
+      // Menampilkan SweetAlert ketika produk berhasil ditambahkan
+      swal("Berhasil!", "Produk berhasil ditambahkan ke keranjang", "success");
+    } catch (error) {
+      if (error.response) {
+        console.error('Response error:', error.response.data);
+        console.error('Status error:', error.response.status);
+      } else if (error.request) {
+        console.error('Request error:', error.request);
+      } else {
+        console.error('Message error:', error.message);
+      }
+
+      // Menampilkan SweetAlert ketika terjadi kesalahan
+      swal("Gagal!", "Produk gagal ditambahkan ke keranjang", "error");
+    }
   };
 
   if (loading) {
@@ -112,7 +128,12 @@ const ProductDetail = () => {
               </div>
               <hr />
               <a className="btn btn-warning shadow-0" style={{ background: "#f8b810", color: "white", margin: "10px", fontWeight: "bold" }}>BUY NOW</a>
-              <a type="submit" className="btn btn-primary shadow-0" style={{ fontWeight: "bold", margin: "10px" }} onClick={addToCartButton}>
+              <a 
+                type="submit" 
+                className="btn btn-primary shadow-0" 
+                style={{ fontWeight: "bold", margin: "10px" }} 
+                onClick={() => addToCart(bookData)}
+              >
                 <ShoppingCart /> ADD TO CART
               </a>
               <Bookmark />
