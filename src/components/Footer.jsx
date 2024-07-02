@@ -43,8 +43,10 @@ function Footer() {
               <a href="#" className="footer-logo">Literary Loom<span>.</span></a>
             </div>
             <p className="mb-4">
-              Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio quis nisl dapibus malesuada.
-              Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique. Pellentesque habitant.
+            We are more than just an online bookstore. We are a community of readers, writers,
+             and literature enthusiasts who share a common love for the beauty and power of words.
+              We believe that every book holds a valuable story to be told, and we strive to serve as a platform for readers to discover and celebrate these stories. Our platform aims to connect individuals who are passionate about literature, fostering discussions, and sharing insights that enrich the reading experience. Join us as we embark on this literary journey together,
+             exploring the wonders of storytelling and expanding our horizons through the written word.
             </p>
 
             <ul className="list-unstyled custom-social">
@@ -61,8 +63,8 @@ function Footer() {
                 <ul className="list-unstyled">
                   <h4><a >Quick Links</a></h4>
                   <li><a href="/About">About Us</a></li>
-                  <li><a href="#">Shop</a></li>
-                  <li><a href="#">Contact us</a></li>
+                  <li><a href="/Shop">Shop</a></li>
+                  <li><a href="/Contact">Contact us</a></li>
                 </ul>
               </div>
 
