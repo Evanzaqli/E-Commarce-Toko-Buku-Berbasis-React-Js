@@ -84,7 +84,26 @@ function Shop() {
             ))}
           </ul>
           <div className="d-flex  mt-4">
-            <Pagination>
+            
+          </div>
+        </div>
+        <div className="col-8 mt-3">
+          <div className="row">
+            {currentProducts.map((product) => (
+              <div className="col-md-3" key={product.id}>
+                <CardProduct
+                  id={product.id}
+                  title={product.title}
+                  price={product.price}
+                  author={product.author}
+                  image={product.image}
+                  category={product.category}
+                />
+              </div>
+            ))}
+          </div>
+
+          <Pagination style={{justifyContent:"center"}}>
               <Pagination.Prev
                 onClick={() =>
                   setCurrentPage((prevPage) =>
@@ -109,25 +128,6 @@ function Shop() {
                 }
               />
             </Pagination>
-          </div>
-        </div>
-        <div className="col-8 mt-3">
-          <div className="row">
-            {currentProducts.map((product) => (
-              <div className="col-lg-3" key={product.id}>
-                <CardProduct
-                  id={product.id}
-                  title={product.title}
-                  price={product.price}
-                  author={product.author}
-                  image={product.image}
-                  category={product.category}
-                />
-              </div>
-            ))}
-          </div>
-
-          
         </div>
       </div>
     </div>
@@ -148,10 +148,10 @@ function CardProduct(props) {
   };
   
   return (
-    <Card style={{ width: "183px" }}>
+    <Card style={{ width: "220px" }}>
       <Container>
         <Link to={`/ProductDetail/${props.id}`}>
-          <Card.Img variant="top" src={props.image} />
+          <Card.Img variant="top" src={props.image} style={{objectFit:"contain"}} />
         </Link>
         <Card.Body>
           <Card.Title style={{fontSize:"15px"}}>{props.title}</Card.Title>
