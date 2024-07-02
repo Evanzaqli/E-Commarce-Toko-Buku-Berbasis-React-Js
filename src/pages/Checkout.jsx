@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import QrisModal from '../components/QrisModal';
+import IndomaretModal from '../components/IndomaretModal';
 
 function Checkout() {
   const [checkoutItems, setCheckoutItems] = useState([]);
-  const tax = 2.0; // Menambahkan konstanta pajak
+  const [showQrisModal, setShowQrisModal] = useState(false);
+  const [showIndomaretModal, setShowIndomaretModal] = useState(false);
+  const [validationErrors, setValidationErrors] = useState({});
+  const tax = 2.0;
 
   useEffect(() => {
     const items = JSON.parse(localStorage.getItem('checkoutItems')) || [];
@@ -15,6 +20,51 @@ function Checkout() {
       currency: "IDR",
       currencyDisplay: "symbol",
     }).format(price);
+  };
+
+  const validateForm = () => {
+    const errors = {};
+    const fullName = document.getElementById('firstName').value.trim();
+    const phoneNumber = document.getElementById('lastName').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const address = document.getElementById('address').value.trim();
+    const province = document.getElementById('province').value.trim();
+    const postalCode = document.getElementById('postalCode').value.trim();
+
+    if (!fullName) {
+      errors.fullName = 'Valid full name is required.';
+    }
+    if (!phoneNumber) {
+      errors.phoneNumber = 'Valid phone number is required.';
+    }
+    if (!email) {
+      errors.email = 'Please enter a valid email address for shipping updates.';
+    }
+    if (!address) {
+      errors.address = 'Please enter your shipping address.';
+    }
+    if (!province) {
+      errors.province = 'Please select a valid province.';
+    }
+    if (!postalCode) {
+      errors.postalCode = 'Please provide a valid postal code.';
+    }
+
+    setValidationErrors(errors);
+    return Object.keys(errors).length === 0;
+  };
+
+  const handlePlaceOrder = () => {
+    if (!validateForm()) {
+      return;
+    }
+
+    const selectedPaymentMethod = document.querySelector('input[name="paymentMethod"]:checked').id;
+    if (selectedPaymentMethod === 'debit') {
+      setShowQrisModal(true);
+    } else if (selectedPaymentMethod === 'credit') {
+      setShowIndomaretModal(true);
+    }
   };
 
   const subtotal = checkoutItems.reduce((total, item) => total + item.price * item.quantity, 0);
@@ -54,7 +104,7 @@ function Checkout() {
               <strong>{formatPrice(totalPayment)}</strong>
             </li>
           </ul>
-          <button className="w-100 btn btn-danger btn-lg" style={{backgroundColor:"#006769"}} type="submit">
+          <button className="w-100 btn btn-danger btn-lg" style={{backgroundColor:"#006769"}} onClick={handlePlaceOrder} type="button">
             Place Order
           </button>
         </div>
@@ -65,32 +115,32 @@ function Checkout() {
               <div className="col-sm-6">
                 <label htmlFor="firstName" className="form-label">Full Name</label>
                 <input type="text" className="form-control" id="firstName" placeholder="" required />
-                <div className="invalid-feedback">Valid full name is required.</div>
+                {validationErrors.fullName && <div className="invalid-feedback d-block">{validationErrors.fullName}</div>}
               </div>
               <div className="col-sm-6">
                 <label htmlFor="lastName" className="form-label">Phone Number</label>
                 <input type="text" className="form-control" id="lastName" placeholder="" required />
-                <div className="invalid-feedback">Valid Phone number is required.</div>
+                {validationErrors.phoneNumber && <div className="invalid-feedback d-block">{validationErrors.phoneNumber}</div>}
               </div>
               <div className="col-12">
                 <label htmlFor="email" className="form-label">Email <span className="text-muted"></span></label>
                 <input type="email" className="form-control" id="email" placeholder="" />
-                <div className="invalid-feedback">Please enter a valid email address for shipping updates.</div>
+                {validationErrors.email && <div className="invalid-feedback d-block">{validationErrors.email}</div>}
               </div>
               <div className="col-12">
                 <label htmlFor="address" className="form-label">Delivery Address</label>
                 <input type="text" className="form-control" id="address" placeholder="" required />
-                <div className="invalid-feedback">Please enter your shipping address.</div>
+                {validationErrors.address && <div className="invalid-feedback d-block">{validationErrors.address}</div>}
               </div>
               <div className="col-md-5">
-                <label htmlFor="country" className="form-label">Province</label>
+                <label htmlFor="province" className="form-label">Province</label>
                 <input type="text" className="form-control" id="province" placeholder="" />
-                <div className="invalid-feedback">Please select a valid country.</div>
+                {validationErrors.province && <div className="invalid-feedback d-block">{validationErrors.province}</div>}
               </div>
               <div className="col-md-4">
-                <label htmlFor="state" className="form-label">Postal Code</label>
+                <label htmlFor="postalCode" className="form-label">Postal Code</label>
                 <input type="text" className="form-control" id="postalCode" placeholder="" />
-                <div className="invalid-feedback">Please provide a valid state.</div>
+                {validationErrors.postalCode && <div className="invalid-feedback d-block">{validationErrors.postalCode}</div>}
               </div>
             </div>
             <hr className="my-4" />
@@ -118,6 +168,8 @@ function Checkout() {
           </form>
         </div>
       </div>
+      <QrisModal show={showQrisModal} handleClose={() => setShowQrisModal(false)} />
+      <IndomaretModal show={showIndomaretModal} handleClose={() => setShowIndomaretModal(false)} />
     </div>
   );
 }

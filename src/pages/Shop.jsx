@@ -83,7 +83,24 @@ function Shop() {
               </li>
             ))}
           </ul>
-          <div className="d-flex  mt-4">
+          
+        </div>
+        <div className="col-8 mt-3">
+          <div className="row">
+            {currentProducts.map((product) => (
+              <div className="col-lg-3" key={product.id}>
+                <CardProduct
+                  id={product.id}
+                  title={product.title}
+                  price={product.price}
+                  author={product.author}
+                  image={product.image}
+                  category={product.category}
+                />
+              </div>
+            ))}
+          </div>
+          <div className="d-flex  mt-4" style={{justifyContent:"center",borderRadius:"5px"}}>
             <Pagination>
               <Pagination.Prev
                 onClick={() =>
@@ -110,23 +127,6 @@ function Shop() {
               />
             </Pagination>
           </div>
-        </div>
-        <div className="col-8 mt-3">
-          <div className="row">
-            {currentProducts.map((product) => (
-              <div className="col-lg-3" key={product.id}>
-                <CardProduct
-                  id={product.id}
-                  title={product.title}
-                  price={product.price}
-                  author={product.author}
-                  image={product.image}
-                  category={product.category}
-                />
-              </div>
-            ))}
-          </div>
-
           
         </div>
       </div>
@@ -144,7 +144,7 @@ function CardProduct(props) {
   };
 
   const handleBuyNow = () => {
-    navigate("/Checkout", { state: { product: props } });
+    navigate("/ProductDetail", { state: { product: props } });
   };
   
   return (
@@ -159,7 +159,9 @@ function CardProduct(props) {
           <p className="price">{formatPrice(props.price)}</p>
         </Card.Body>
       </Container>
-      <Button className="Buy" onClick={handleBuyNow}>Buy Now</Button>
+      <Link to={`/ProductDetail/${props.id}`}>
+      <Button className="Buy" >Detail book</Button>
+      </Link>
     </Card>
   );
 }

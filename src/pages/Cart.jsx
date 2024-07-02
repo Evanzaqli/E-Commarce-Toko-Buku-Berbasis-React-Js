@@ -61,12 +61,11 @@ function Cart() {
       return;
     }
     const itemsToCheckout = cartItems.filter(item => checkedItems.includes(item.id));
-    // Save the items to localStorage or use context/state management to pass the data to checkout page
     localStorage.setItem("checkoutItems", JSON.stringify(itemsToCheckout));
     navigate("/Checkout");
   };
 
-  // Handle checkbox change
+ 
   const handleCheckChange = (id) => {
     const newCheckedItems = checkedItems.includes(id)
       ? checkedItems.filter(itemId => itemId !== id)
@@ -90,7 +89,7 @@ function Cart() {
       .get("http://localhost:3500/cart")
       .then((res) => {
         setCartItems(res.data);
-        updateTotalPrice(res.data, checkedItems); // Update total price with fetched data
+        updateTotalPrice(res.data, checkedItems); 
       })
       .catch((err) => {
         console.log(err);

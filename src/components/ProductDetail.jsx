@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Bookmark, ShoppingCart } from "react-feather";
 import swal from "sweetalert";
 
 const ProductDetail = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [bookData, setBookData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -53,7 +54,7 @@ const ProductDetail = () => {
       const response = await axios.post('http://localhost:3500/cart', productWithQuantity);
       console.log('Produk berhasil ditambahkan ke keranjang:', response.data);
 
-      // Menampilkan SweetAlert ketika produk berhasil ditambahkan
+     
       swal("Berhasil!", "Produk berhasil ditambahkan ke keranjang", "success");
     } catch (error) {
       if (error.response) {
@@ -65,10 +66,12 @@ const ProductDetail = () => {
         console.error('Message error:', error.message);
       }
 
-      // Menampilkan SweetAlert ketika terjadi kesalahan
+      
       swal("Gagal!", "Produk gagal ditambahkan ke keranjang", "error");
     }
   };
+
+  
 
   if (loading) {
     return <div>Loading...</div>;
@@ -110,7 +113,7 @@ const ProductDetail = () => {
                   <span className="ms-1">4.5</span>
                 </div>
                 <span className="text-muted">
-                  <i className="fas fa-shopping-basket fa-sm mx-1"></i>154 orders
+                  <i className="fas fa-shopping-basket fa-sm mx-1"></i>
                 </span>
                 <span className="text-success ms-2">In stock</span>
               </div>
@@ -127,7 +130,7 @@ const ProductDetail = () => {
                 </div>
               </div>
               <hr />
-              <a className="btn btn-warning shadow-0" style={{ background: "#f8b810", color: "white", margin: "10px", fontWeight: "bold" }}>BUY NOW</a>
+              
               <a 
                 type="submit" 
                 className="btn btn-primary shadow-0" 
