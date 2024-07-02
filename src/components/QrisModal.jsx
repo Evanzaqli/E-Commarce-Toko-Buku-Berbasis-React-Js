@@ -14,10 +14,10 @@ function QrisModal({ show, handleClose }) {
 
   const showConfirmation = () => {
     Swal({
-      title: 'Pembayaran di proses',
-      text: 'Apaka anda ingin lanjut belanja?',
+      title: 'Payment on success',
+      text: 'Do you want to continue shopping?',
       icon: 'success',
-      buttons: ['Batal', 'Ya, Kembali ke Belanja'],
+      buttons: ['Cancel', 'Yes, Back to Shopping'],
       dangerMode: true,
     }).then((willReturn) => {
       if (willReturn) {
@@ -29,11 +29,11 @@ function QrisModal({ show, handleClose }) {
   return (
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
-        <Modal.Title>Bayar dengan QRIS</Modal.Title>
+        <Modal.Title>Pay with QRIS</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <img src={qr} alt="QRIS Code" className="img-fluid" />
-        <p>Silakan scan QR code di atas untuk melakukan pembayaran.</p>
+        <p>Please scan the QR code above to make payment.</p>
       </Modal.Body>
       <Modal.Footer>
         <Button variant="secondary" onClick={handleCloseModal}>

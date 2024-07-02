@@ -52,18 +52,7 @@ function Login({ show, handleClose }) {
             Login
           </Button>
         </Form>
-        <div className="text-center text-muted delimiter mt-3">or use a social network</div>
-        <div className="d-flex justify-content-center social-buttons mt-3">
-          <button type="button" className="btn btn-secondary btn-round me-2" data-toggle="tooltip" data-placement="top" title="Twitter">
-            <i className="fab fa-twitter"></i>
-          </button>
-          <button type="button" className="btn btn-secondary btn-round me-2" data-toggle="tooltip" data-placement="top" title="Facebook">
-            <i className="fab fa-facebook"></i>
-          </button>
-          <button type="button" className="btn btn-secondary btn-round" data-toggle="tooltip" data-placement="top" title="google">
-            <i className="fab fa-google"></i>
-          </button>
-        </div>
+       
         <div className="modal-footer d-flex justify-content-center mt-3">
           <div className="signup-section">Not a member yet? <a href="#a" className="text-info">sign up</a>.</div>
         </div>

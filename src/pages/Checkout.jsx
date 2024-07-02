@@ -29,7 +29,7 @@ function Checkout() {
     const email = document.getElementById('email').value.trim();
     const address = document.getElementById('address').value.trim();
     const province = document.getElementById('province').value.trim();
-    const postalCode = document.getElementById('postalCode').value.trim();
+   
 
     if (!fullName) {
       errors.fullName = 'Valid full name is required.';
@@ -46,9 +46,7 @@ function Checkout() {
     if (!province) {
       errors.province = 'Please select a valid province.';
     }
-    if (!postalCode) {
-      errors.postalCode = 'Please provide a valid postal code.';
-    }
+    
 
     setValidationErrors(errors);
     return Object.keys(errors).length === 0;
@@ -137,22 +135,10 @@ function Checkout() {
                 <input type="text" className="form-control" id="province" placeholder="" />
                 {validationErrors.province && <div className="invalid-feedback d-block">{validationErrors.province}</div>}
               </div>
-              <div className="col-md-4">
-                <label htmlFor="postalCode" className="form-label">Postal Code</label>
-                <input type="text" className="form-control" id="postalCode" placeholder="" />
-                {validationErrors.postalCode && <div className="invalid-feedback d-block">{validationErrors.postalCode}</div>}
-              </div>
+             
             </div>
             <hr className="my-4" />
-            <div className="form-check">
-              <input type="checkbox" className="form-check-input" id="same-address" />
-              <label className="form-check-label" htmlFor="same-address">Shipping address is the same as my billing address</label>
-            </div>
-            <div className="form-check">
-              <input type="checkbox" className="form-check-input" id="save-info" />
-              <label className="form-check-label" htmlFor="save-info">Save this information for next time</label>
-            </div>
-            <hr className="my-4" />
+            
             <h4 className="mb-3">Payment</h4>
             <div className="my-3">
               <div className="form-check">

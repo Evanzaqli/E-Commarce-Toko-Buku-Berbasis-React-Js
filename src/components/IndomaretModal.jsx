@@ -29,10 +29,10 @@ function IndomaretModal({ show, handleClose }) {
 
   const showConfirmation = () => {
     Swal({
-      title: 'Pembayaran di proses',
-      text: 'Apaka anda ingin lanjut belanja?',
+      title: 'Payment on success',
+      text: 'Do you want to continue shopping?',
       icon: 'success',
-      buttons: ['Batal', 'Ya, Kembali ke Belanja'],
+      buttons: ['Cancel', 'Yes, Back to Shopping'],
       dangerMode: true,
     }).then((willReturn) => {
       if (willReturn) {

@@ -6,10 +6,10 @@ import { Instagram ,Linkedin,Twitter} from 'react-feather';
 function Team() {
     const teamMembers = [
         { id: 1, name: 'Evan Zaqli', role: 'Front end', image: '/image/6(sq).jpeg',nim :'22.11.4713' },
-        { id: 2, name: 'Rin ', role: 'Back end', image: '/image/2.jpg',nim :'22.11.4713' },
-        { id: 3, name: 'Inez', role: 'Back end', image: '/image/3(sq).jpg',nim :'22.11.4713' },
-        { id: 4, name: 'Sekar', role: 'Fornt end', image: '/image/4(sq).jpeg',nim :'22.11.4713' },
-        { id: 5, name: 'Aryan', role: 'Fornt end ', image: '/image/1(sq).jpg' ,nim :'22.11.4713'},
+        { id: 2, name: 'Berliana Kharisma Nur Habibah', role: 'Back end', image: '/image/2.jpg',nim :'22.11.4692' },
+        { id: 3, name: 'Eleonora Inez Febri Almanta', role: 'Back end', image: '/image/3(sq).jpg',nim :'22.11.4697' },
+        { id: 4, name: 'Sekar Taji Palupi', role: 'Fornt end', image: '/image/4(sq).jpeg',nim :'22.11.4716' },
+        { id: 5, name: 'Aryant Barbaryant A', role: 'Fornt end ', image: '/image/1(sq).jpg' ,nim :'22.11.4686'},
         { id: 6, name: 'Dilla', role: 'Back End', image: '/image/5(sq).jpeg' ,nim :'22.11.4713'}
     ];
 

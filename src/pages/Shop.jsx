@@ -1,9 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import Card from "react-bootstrap/Card";
 import "../components/css/Shop.css";
 import { Button, Container } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Pagination from 'react-bootstrap/Pagination'; 
 
 function Shop() {
@@ -12,20 +11,23 @@ function Shop() {
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("All Books");
   const [searchTerm, setSearchTerm] = useState("");
-
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 8;
 
   const getDataProduct = async () => {
-    const response = await fetch(url);
-    const dataProduct = await response.json();
-    setProducts(dataProduct);
+    try {
+      const response = await fetch(url);
+      const dataProduct = await response.json();
+      setProducts(dataProduct);
 
-    const uniqueCategories = [
-      "All Books",
-      ...new Set(dataProduct.map((product) => product.category)),
-    ];
-    setCategories(uniqueCategories);
+      const uniqueCategories = [
+        "All Books",
+        ...new Set(dataProduct.map((product) => product.category)),
+      ];
+      setCategories(uniqueCategories);
+    } catch (error) {
+      console.error("Failed to fetch products:", error);
+    }
   };
 
   useEffect(() => {
@@ -37,21 +39,20 @@ function Shop() {
     setCurrentPage(1);
   };
 
-  const filteredProducts = products.filter((product) => {
-    const matchesCategory =
-      selectedCategory === "All Books" || product.category === selectedCategory;
-    const matchesSearch = product.title
-      .toLowerCase()
-      .includes(searchTerm.toLowerCase());
-    return matchesCategory && matchesSearch;
-  });
+  const filteredProducts = useMemo(() => {
+    return products.filter((product) => {
+      const matchesCategory =
+        selectedCategory === "All Books" || product.category === selectedCategory;
+      const matchesSearch = product.title
+        .toLowerCase()
+        .includes(searchTerm.toLowerCase());
+      return matchesCategory && matchesSearch;
+    });
+  }, [products, selectedCategory, searchTerm]);
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentProducts = filteredProducts.slice(
-    indexOfFirstItem,
-    indexOfLastItem
-  );
+  const currentProducts = filteredProducts.slice(indexOfFirstItem, indexOfLastItem);
   const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
 
   const handlePageChange = (page) => {
@@ -68,37 +69,27 @@ function Shop() {
             placeholder="Search..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
+            aria-label="Search"
           />
           <h2>Category</h2>
           <ul className="list-group">
             {categories.map((category) => (
               <li
                 key={category}
-                className={`list-group-item ${
-                  selectedCategory === category ? "active" : ""
-                }`}
+                className={`list-group-item ${selectedCategory === category ? "active" : ""}`}
                 onClick={() => handleCategoryClick(category)}
+                role="button"
+                aria-current={selectedCategory === category ? "true" : "false"}
               >
                 {category}
               </li>
             ))}
           </ul>
-<<<<<<< HEAD
-          
-=======
-          <div className="d-flex  mt-4">
-            
-          </div>
->>>>>>> 79759467e787abce44b0a3b0d6d1705607e37b78
         </div>
         <div className="col-8 mt-3">
           <div className="row">
             {currentProducts.map((product) => (
-<<<<<<< HEAD
-              <div className="col-lg-3" key={product.id}>
-=======
               <div className="col-md-3" key={product.id}>
->>>>>>> 79759467e787abce44b0a3b0d6d1705607e37b78
                 <CardProduct
                   id={product.id}
                   title={product.title}
@@ -110,49 +101,34 @@ function Shop() {
               </div>
             ))}
           </div>
-<<<<<<< HEAD
-          <div className="d-flex  mt-4" style={{justifyContent:"center",borderRadius:"5px"}}>
-            <Pagination>
-=======
-
-          <Pagination style={{justifyContent:"center"}}>
->>>>>>> 79759467e787abce44b0a3b0d6d1705607e37b78
-              <Pagination.Prev
-                onClick={() =>
-                  setCurrentPage((prevPage) =>
-                    prevPage > 1 ? prevPage - 1 : prevPage
-                  )
-                }
-              />
-              {Array.from({ length: totalPages }, (_, index) => (
-                <Pagination.Item
-                  key={index + 1}
-                  active={index + 1 === currentPage}
-                  onClick={() => handlePageChange(index + 1)}
-                >
-                  {index + 1}
-                </Pagination.Item>
-              ))}
-              <Pagination.Next
-                onClick={() =>
-                  setCurrentPage((nextPage) =>
-                    nextPage < totalPages ? nextPage + 1 : nextPage
-                  )
-                }
-              />
-            </Pagination>
-<<<<<<< HEAD
-          </div>
-          
-=======
->>>>>>> 79759467e787abce44b0a3b0d6d1705607e37b78
+          <Pagination style={{ justifyContent: "center" }}>
+            <Pagination.Prev
+              onClick={() =>
+                setCurrentPage((prevPage) => prevPage > 1 ? prevPage - 1 : prevPage)
+              }
+            />
+            {Array.from({ length: totalPages }, (_, index) => (
+              <Pagination.Item
+                key={index + 1}
+                active={index + 1 === currentPage}
+                onClick={() => handlePageChange(index + 1)}
+              >
+                {index + 1}
+              </Pagination.Item>
+            ))}
+            <Pagination.Next
+              onClick={() =>
+                setCurrentPage((nextPage) => nextPage < totalPages ? nextPage + 1 : nextPage)
+              }
+            />
+          </Pagination>
         </div>
       </div>
     </div>
   );
 }
 
-function CardProduct(props) {
+function CardProduct({ id, title, price, author, image }) {
   const navigate = useNavigate();
   const formatPrice = (price) => {
     return new Intl.NumberFormat("id", {
@@ -162,24 +138,22 @@ function CardProduct(props) {
   };
 
   const handleBuyNow = () => {
-    navigate("/ProductDetail", { state: { product: props } });
+    navigate("/Checkout", { state: { product: { id, title, price, author, image } } });
   };
-  
+
   return (
-    <Card style={{ width: "220px" }}>
+    <Card style={{ width: "183px" }}>
       <Container>
-        <Link to={`/ProductDetail/${props.id}`}>
-          <Card.Img variant="top" src={props.image} style={{objectFit:"contain"}} />
+        <Link to={`/ProductDetail/${id}`}>
+          <Card.Img variant="top" src={image} style={{ objectFit: "contain" }} />
         </Link>
         <Card.Body>
-          <Card.Title style={{fontSize:"15px"}}>{props.title}</Card.Title>
-          <Card.Text>{props.author}</Card.Text>
-          <p className="price">{formatPrice(props.price)}</p>
+          <Card.Title style={{ fontSize: "15px" }}>{title}</Card.Title>
+          <Card.Text>{author}</Card.Text>
+          <p className="price">{formatPrice(price)}</p>
         </Card.Body>
       </Container>
-      <Link to={`/ProductDetail/${props.id}`}>
-      <Button className="Buy" >Detail book</Button>
-      </Link>
+      <Button className="Buy" onClick={handleBuyNow}>Buy Now</Button>
     </Card>
   );
 }
