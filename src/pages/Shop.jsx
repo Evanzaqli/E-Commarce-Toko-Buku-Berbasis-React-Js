@@ -83,12 +83,22 @@ function Shop() {
               </li>
             ))}
           </ul>
+<<<<<<< HEAD
           
+=======
+          <div className="d-flex  mt-4">
+            
+          </div>
+>>>>>>> 79759467e787abce44b0a3b0d6d1705607e37b78
         </div>
         <div className="col-8 mt-3">
           <div className="row">
             {currentProducts.map((product) => (
+<<<<<<< HEAD
               <div className="col-lg-3" key={product.id}>
+=======
+              <div className="col-md-3" key={product.id}>
+>>>>>>> 79759467e787abce44b0a3b0d6d1705607e37b78
                 <CardProduct
                   id={product.id}
                   title={product.title}
@@ -100,8 +110,13 @@ function Shop() {
               </div>
             ))}
           </div>
+<<<<<<< HEAD
           <div className="d-flex  mt-4" style={{justifyContent:"center",borderRadius:"5px"}}>
             <Pagination>
+=======
+
+          <Pagination style={{justifyContent:"center"}}>
+>>>>>>> 79759467e787abce44b0a3b0d6d1705607e37b78
               <Pagination.Prev
                 onClick={() =>
                   setCurrentPage((prevPage) =>
@@ -126,8 +141,11 @@ function Shop() {
                 }
               />
             </Pagination>
+<<<<<<< HEAD
           </div>
           
+=======
+>>>>>>> 79759467e787abce44b0a3b0d6d1705607e37b78
         </div>
       </div>
     </div>
@@ -148,10 +166,10 @@ function CardProduct(props) {
   };
   
   return (
-    <Card style={{ width: "183px" }}>
+    <Card style={{ width: "220px" }}>
       <Container>
         <Link to={`/ProductDetail/${props.id}`}>
-          <Card.Img variant="top" src={props.image} />
+          <Card.Img variant="top" src={props.image} style={{objectFit:"contain"}} />
         </Link>
         <Card.Body>
           <Card.Title style={{fontSize:"15px"}}>{props.title}</Card.Title>
