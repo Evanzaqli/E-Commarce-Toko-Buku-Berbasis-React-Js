@@ -130,11 +130,7 @@ function Checkout() {
                 <input type="text" className="form-control" id="address" placeholder="" required />
                 {validationErrors.address && <div className="invalid-feedback d-block">{validationErrors.address}</div>}
               </div>
-              <div className="col-md-5">
-                <label htmlFor="province" className="form-label">Province</label>
-                <input type="text" className="form-control" id="province" placeholder="" />
-                {validationErrors.province && <div className="invalid-feedback d-block">{validationErrors.province}</div>}
-              </div>
+              
              
             </div>
             <hr className="my-4" />
