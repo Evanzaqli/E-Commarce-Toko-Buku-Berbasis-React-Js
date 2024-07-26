@@ -38,7 +38,7 @@ function Navbar() {
         <div className="container">
           <Link className="navbar-brand" to="/">
             <img src={logo} alt="Logo" className="navbar-logo" />
-            <span className='logo'>LiteraryLoom</span>
+            <span className='logo1'>LiteraryLoom</span>
           </Link>
 
           <button
@@ -55,7 +55,7 @@ function Navbar() {
           </button>
 
           <div className={`collapse navbar-collapse ${navbarOpen ? 'show' : ''}`} id="navbar">
-            <ul className="navbar-nav custom-navbar-nav">
+            <ul className="navbar-nav custom-navbar-nav"style={{justifyContent:"center",marginLeft:"200px"}}>
               <li className="nav-item">
                 <Link className="nav-link" to="/" onClick={toggleNavbar}>HOME</Link>
               </li>
@@ -71,11 +71,7 @@ function Navbar() {
             </ul>
 
             <ul className="navbar-nav custom-navbar-cta ms-auto">
-              <li className="nav-item">
-                <Link className="nav-link" to="/cart" onClick={toggleNavbar}>
-                  <img src={cartIcon} className="cart-icon" alt="Cart" />
-                </Link>
-              </li>
+              
               {isLoggedIn ? (
                 <li 
                   className="nav-item dropdown"
@@ -93,6 +89,11 @@ function Navbar() {
                 </li>
               ) : (
                 <>
+                <li className="nav-item">
+                <Link className="nav-link" to="/cart" onClick={toggleNavbar}>
+                  <img src={cartIcon} className="cart-icon" alt="Cart" />
+                </Link>
+              </li>
                   <li className="nav-item ">
                     <button className="nav-link btn btn-link" onClick={handleShow}>
                       Log In
