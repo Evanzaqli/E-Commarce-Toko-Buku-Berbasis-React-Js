@@ -28,8 +28,7 @@ function Checkout() {
     const phoneNumber = document.getElementById('lastName').value.trim();
     const email = document.getElementById('email').value.trim();
     const address = document.getElementById('address').value.trim();
-    const province = document.getElementById('province').value.trim();
-   
+    
 
     if (!fullName) {
       errors.fullName = 'Valid full name is required.';
@@ -43,9 +42,7 @@ function Checkout() {
     if (!address) {
       errors.address = 'Please enter your shipping address.';
     }
-    if (!province) {
-      errors.province = 'Please select a valid province.';
-    }
+   
     
 
     setValidationErrors(errors);
