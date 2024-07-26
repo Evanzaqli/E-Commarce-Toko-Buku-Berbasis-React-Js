@@ -6,6 +6,7 @@ import Login from '../pages/Login';
 import SignUp from '../pages/SignUp';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import '../App.css'
 
 function Navbar() {
   const [showLogin, setShowLogin] = useState(false);
@@ -33,10 +34,10 @@ function Navbar() {
 
   return (
     <>
-      <nav className="custom-navbar navbar navbar-expand-md navbar-dark bg-dark fixed-top" aria-label="Navbar">
+      <nav className="custom-navbar navbar navbar-expand-md navbar-dark  fixed-top" aria-label="Navbar" style={{backgroundColor:"#006769"}}>
         <div className="container">
           <Link className="navbar-brand" to="/">
-            <img src={logo} alt="Logo" width="60px" />
+            <img src={logo} alt="Logo" className="navbar-logo" />
             <span className='logo'>LiteraryLoom</span>
           </Link>
 
@@ -46,7 +47,7 @@ function Navbar() {
             data-bs-toggle="collapse"
             data-bs-target="#navbar"
             aria-controls="navbar"
-            aria-expanded="false"
+            aria-expanded={navbarOpen}
             aria-label="Toggle navigation"
             onClick={toggleNavbar}
           >
@@ -61,7 +62,7 @@ function Navbar() {
               <li className="nav-item">
                 <Link className="nav-link" to="/shop" onClick={toggleNavbar}>SHOP</Link>
               </li>
-              <li className="nav-item">
+              <li className="nav-item ">
                 <Link className="nav-link" to="/about" onClick={toggleNavbar}>ABOUT US</Link>
               </li>
               <li className="nav-item">
@@ -72,7 +73,7 @@ function Navbar() {
             <ul className="navbar-nav custom-navbar-cta ms-auto">
               <li className="nav-item">
                 <Link className="nav-link" to="/cart" onClick={toggleNavbar}>
-                  <img src={cartIcon} height="18px" width="20px" alt="Cart" />
+                  <img src={cartIcon} className="cart-icon" alt="Cart" />
                 </Link>
               </li>
               {isLoggedIn ? (
@@ -92,12 +93,12 @@ function Navbar() {
                 </li>
               ) : (
                 <>
-                  <li className="nav-item" style={{marginTop:"5px"}}>
+                  <li className="nav-item ">
                     <button className="nav-link btn btn-link" onClick={handleShow}>
                       Log In
                     </button>
                   </li>
-                  <li className="nav-item" style={{marginTop:"5px"}}>
+                  <li className="nav-item">
                     <button className="nav-link btn btn-link" onClick={registerHandleShow}>
                       Sign Up
                     </button>
